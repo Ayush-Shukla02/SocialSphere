@@ -4,7 +4,6 @@ import Navbar from "scenes/navbar/index";
 import UserWidget from "scenes/widgets/UserWidget";
 import MyPostWidget from "scenes/widgets/MyPostWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
-import AdvertWidget from "scenes/widgets/AdvertWidget";
 import FriendListWidget from "scenes/widgets/FriendListWidget";
 
 const HomePage = () => {
@@ -35,8 +34,6 @@ const HomePage = () => {
 
 				{isNonMobileScreens && (
 					<Box flexBasis="26%">
-						<AdvertWidget />
-						<Box m="2rem 0" />
 						<FriendListWidget userId={_id} />
 					</Box>
 				)}
