@@ -26,7 +26,7 @@ export const authSlice = createSlice({
 			if (state.user) {
 				state.user.friends = action.payload.friends;
 			} else {
-				console.error("User not logged in");
+				console.error("Get some friends :(");
 			}
 		},
 		setPosts: (state, action) => {
@@ -34,11 +34,9 @@ export const authSlice = createSlice({
 		},
 		setPost: (state, action) => {
 			const updatedPosts = state.posts.map((post) => {
-				if (post._id === action.payload.post._id) {
+				if (post._id === action.payload.post._id)
 					return action.payload.post;
-				} else {
-					return post;
-				}
+				return post;
 			});
 			state.posts = updatedPosts;
 		},
