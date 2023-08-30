@@ -25,5 +25,5 @@ The SocialSphere is a full-stack responsive web application built using the MERN
 
 ## Technologies Used
 
--   **Posts**: React, Redux, MaterialUI
+-   **Frontend**: React, Redux, MaterialUI
 -   **Backend**: Node.js, Express.js, MongoDB, Mongoose, JWT
