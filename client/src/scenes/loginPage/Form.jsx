@@ -90,7 +90,7 @@ const Form = () => {
 			}
 		);
 
-		const loggedIn = loggedInResponse.json();
+		const loggedIn = await loggedInResponse.json();
 		onSubmitProps.resetForm();
 
 		if (loggedIn) {
@@ -101,7 +101,7 @@ const Form = () => {
 
 	const handleFormSubmit = async (values, onSubmitProps) => {
 		if (isLogin) {
-			await loginSchema(values, onSubmitProps);
+			await login(values, onSubmitProps);
 		}
 
 		if (isRegister) {
@@ -151,7 +151,7 @@ const Form = () => {
 									helperText={
 										touched.firstName && errors.firstName
 									}
-									sx={{ gridColums: "span 2" }}
+									sx={{ gridColumn: "span 2" }}
 								/>
 								<TextField
 									label="Last Name"
@@ -166,7 +166,7 @@ const Form = () => {
 									helperText={
 										touched.lastName && errors.lastName
 									}
-									sx={{ gridColums: "span 2" }}
+									sx={{ gridColumn: "span 2" }}
 								/>
 								<TextField
 									label="Location"
@@ -219,7 +219,7 @@ const Form = () => {
 												{...getRootProps()}
 												border={`2px dashed ${palette.primary.main}`}
 												p="1rem"
-												sz={{
+												sx={{
 													"&:hover": {
 														cursor: "pointer",
 													},
@@ -290,7 +290,7 @@ const Form = () => {
 								"&:hover": { color: palette.primary.main },
 							}}
 						>
-							{isLogin ? "Login" : "Register"}
+							{isLogin ? "LOGIN" : "REGISTER"}
 						</Button>
 						<Typography
 							onClick={() => {
@@ -308,7 +308,7 @@ const Form = () => {
 						>
 							{isLogin
 								? "Don't have an account? Sign Up here."
-								: "Existing user? Login here."}
+								: "Already have an account? Login here."}
 						</Typography>
 					</Box>
 				</form>
